@@ -1,6 +1,11 @@
 {
   "files": [
     {
+      "fileId": "1pL_tPr2JGzh03bcGQYcAb9CPHbWsbk3ZIWSgU0R214M",
+      "type": "sheet",
+      "name": "queen"
+    },
+    {
       "fileId": "1RgMhjtkXlbbf9uzSzy_xPRKwxcVZIZqVytgM_JoU4E4",
       "type": "doc",
       "name": "library"
@@ -18,6 +23,13 @@
       "array": "books",
       "slug": "slug",
       "path": "books"
+    },
+    {
+      "template": "bake-members",
+      "data": "queen",
+      "array": "members",
+      "slug": "slug",
+      "path": ""
     }
   ]
 }

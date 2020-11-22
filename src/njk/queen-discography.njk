@@ -1,0 +1,20 @@
+{% extends '_templates/base.njk' %}
+
+{% block page_title %}Discography{% endblock %}
+
+{% block page_description %}The index search description for this page goes here.{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1>Queen discography</h1>
+  <div class="row">
+    <div class="col-sm col-sm col-md col-md col-md col-md">
+    {% for discography in queen.discography %}
+        <img src="{{ relative_path }}../img/img-queen/discs/{{ discography.image }}" alt="" class="img-fluid">
+        <h3>{{ discography.title }}</h3>
+        <h5>{{ discography.year }}</h5>
+      </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+  </div>

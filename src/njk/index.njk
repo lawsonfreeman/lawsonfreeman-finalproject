@@ -1,30 +1,40 @@
 {% extends '_templates/base.njk' %}
 
-{% block page_title %}Index page title{% endblock %}
+{% set relative_path = "../" %}
 
-{% block page_description %}The index search description for this page goes here.{% endblock %}
+{% block page_title %}About{% endblock %}
 
 {% block content %}
 <div class="container">
-  <h1>Main headline here</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in facilisis velit, aliquam congue dui. Mauris id mi quam. Nam enim leo, bibendum vel efficitur id, elementum malesuada est. Pellentesque interdum tempus eros nec iaculis. Quisque ac est dictum, vehicula nulla quis, condimentum dui.</p>
-  <h2>Library books loop</h2>
-  <p>This loops through data that came from a Google Docs example.</p>
   <div class="row">
-    {% for book in library.books %}
+    <div class="col">
+      <h1>About the band</h1>
+        <p>Queen was a British rock band that began in London in the 1970s, but listeners of the group can now be found around the world. The band's original members were Freddy Mercury, Brian May, John Deacon and Roger Taylor. Some of Queen's most popular tracks include "Bohemian Rhapsody," "Another One Bites the Dust," "We Will Rock You" and "We Are the Champions." In 2018, the film "Bohemian Rhapsody" was released by Bryan Singer about the rise of lead singer Mercury and the creation of one of the most popular bands ever known.</p>
+        <div class="container">
+          <div class="row" style="width:800px; margin:0 auto;">
+            <div class="col-lg-6"><img src="../img/img-queen/queen-band-early.jpg" alt="Early photo of Queen" style="width:400px;height:300px;"></div>
+            <div class="col-lg-6"><img src="../img/img-queen/queen-live-on-stage.jpg" alt="Live performance photo of Queen" style="width:400px;height:300px;"></div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <h2>Members of Queen</h2>
+  <p>More information on the band's four original members.</p>
+    <div class="row">
+    {% for member in queen.members %}
       <div class="col">
-        <img src="img/{{ book.slug }}.jpg" alt="" class="img-fluid">
-        <h3><a href="books/{{ book.slug }}.html">{{ book.title }}</a></h3>
+        <img src="{{ relative_path }}../img/img-queen/members/{{ member.slug }}-bw.jpg" alt="" class="img-fluid">
+        <h6><a href="{{ relative_path }}../{{ member.slug }}.html">{{ member.name }}</a></h6>
       </div>
     {% endfor %}
-  </div>
-  <h2>Bookstores loop</h2>
-  <p>This loops through data that came from a Google Sheet example.</p>
-  <hr>
-  {% for store in bookstores.stores %}
-    <h3><a href="{{ store.url }}" target="_blank">{{ store.name }}</a></h3>
-    <p>{{ store.address}}, {{ store.city }}, {{ store.state }} {{ store.zip }}</p>
+    </div>
+  <h2><a href="http://localhost:3000/queen-discography.html" target="_blank">Albums by Queen</a></h2>
+    <div>
     <hr>
-  {% endfor %}
+    {% for discography in queen.discography %}
+    <p>{{ discography.title }}</p>
+    <hr>
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}
