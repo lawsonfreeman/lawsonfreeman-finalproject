@@ -8,33 +8,29 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h1>About the band</h1>
+      <div class="heading"><h1>About the band</h1></div>
         <p>Queen was a British rock band that began in London in the 1970s, but listeners of the group can now be found around the world. The band's original members were Freddy Mercury, Brian May, John Deacon and Roger Taylor. Some of Queen's most popular tracks include "Bohemian Rhapsody," "Another One Bites the Dust," "We Will Rock You" and "We Are the Champions." In 2018, the film "Bohemian Rhapsody" was released by Bryan Singer about the rise of lead singer Mercury and the creation of one of the most popular bands ever known.</p>
-        <div class="container">
-          <div class="row" style="width:800px; margin:0 auto;">
-            <div class="col-lg-6"><img src="../img/img-queen/queen-band-early.jpg" alt="Early photo of Queen" style="width:400px;height:300px;"></div>
-            <div class="col-lg-6"><img src="../img/img-queen/queen-live-on-stage.jpg" alt="Live performance photo of Queen" style="width:400px;height:300px;"></div>
+        <div class="image">
+          <div class="col img-fluid width: 100%">
+            <img src="../img/queen-live-on-stage.jpg" alt="Live performance photo of Queen">
           </div>
         </div>
     </div>
   </div>
-  <h2>Members of Queen</h2>
+</div>
+<div class="container">
+  <div class="heading"><h2>Members of Queen</h2></div>
   <p>More information on the band's four original members.</p>
     <div class="row">
     {% for member in queen.members %}
-      <div class="col">
-        <img src="{{ relative_path }}../img/img-queen/members/{{ member.slug }}-bw.jpg" alt="" class="img-fluid">
-        <h6><a href="{{ relative_path }}../{{ member.slug }}.html">{{ member.name }}</a></h6>
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <img src="img/{{ member.slug }}-bw.jpg" alt="" class="img-fluid">
+        <h6><a href="/{{ member.slug }}.html">{{ member.name }}</a></h6>
       </div>
     {% endfor %}
     </div>
-  <h2><a href="http://localhost:3000/queen-discography.html" target="_blank">Albums by Queen</a></h2>
-    <div>
-    <hr>
-    {% for discography in queen.discography %}
-    <p>{{ discography.title }}</p>
-    <hr>
-    {% endfor %}
-    </div>
+</div>
+<div class="container">
+    <div class="heading"><h2>Find more information about Queen's music <a href="queen-discography.html">here</a>.</h2></div>
 </div>
 {% endblock %}

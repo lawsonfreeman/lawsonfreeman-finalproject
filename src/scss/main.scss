@@ -1,9 +1,9 @@
 // Custom variable overrides
 // See node_modules/bootstrap/scss/_variables.scss
 
-// $body-bg: black;
-// $body-color: white;
-// $link-hover-color: grey;
+$body-bg: black;
+$body-color: white;
+ $link-color: orangered;
 // $font-family-sans-serif: "Helvetica Neue";
 
 /* bootstrap */
@@ -22,6 +22,13 @@
 @import "nav";
 
 @import "jumbotron";
+
+@import "index";
+
+.heading {
+  font-family: 'Cinzel', serif;
+  color: gray;
+}
 
 h3 {
   font-size: 1.5rem;
