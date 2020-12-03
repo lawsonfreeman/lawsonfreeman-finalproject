@@ -12,7 +12,7 @@
         <p>Queen was a British rock band that began in London in the 1970s, but listeners of the group can now be found around the world. The band's original members were Freddy Mercury, Brian May, John Deacon and Roger Taylor. Some of Queen's most popular tracks include "Bohemian Rhapsody," "Another One Bites the Dust," "We Will Rock You" and "We Are the Champions." In 2018, the film "Bohemian Rhapsody" was released by Bryan Singer about the rise of lead singer Mercury and the creation of one of the most popular bands ever known.</p>
         <div class="image">
           <div class="col img-fluid width: 100%">
-            <img src="../img/queen-live-on-stage.jpg" alt="Live performance photo of Queen">
+            <img src="img/queen-live-on-stage.jpg" alt="Live performance photo of Queen">
           </div>
         </div>
     </div>
@@ -23,9 +23,9 @@
   <p>More information on the band's four original members.</p>
     <div class="row">
     {% for member in queen.members %}
-      <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="col-sm-6 col-lg-3">
         <img src="img/{{ member.slug }}-bw.jpg" alt="" class="img-fluid">
-        <h6><a href="/{{ member.slug }}.html">{{ member.name }}</a></h6>
+        <h6><a href="members/{{ member.slug }}.html">{{ member.name }}</a></h6>
       </div>
     {% endfor %}
     </div>
